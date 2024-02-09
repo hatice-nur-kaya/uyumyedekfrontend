@@ -1,0 +1,26 @@
+<div class="container mt-3">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"><button class="btn btn-primary">Ekle</button></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Adı</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Rol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
