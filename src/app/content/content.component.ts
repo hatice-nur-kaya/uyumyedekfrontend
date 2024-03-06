@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../services/user.service';
+import { User } from '../models/user.model';
+import { UserModalComponent } from '../user-modal/user-modal.component';
 
 @Component({
   selector: 'app-content',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class ContentComponent implements OnInit {
-  users: any[] = [];
-
-  constructor(private userService: UserService) { }
+  users: User[] = [];
+  
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe({
-      next: (data) => {
-        this.users = data;
+      next: (response) => {
+        this.users = response.data; 
       },
-      error: (err) => {
-        console.error('Kullanıcıları alma hatası:', err);
-      }
+      error: (error) => console.error('Kullanıcıları alma hatası:', error)
     });
   }
 }

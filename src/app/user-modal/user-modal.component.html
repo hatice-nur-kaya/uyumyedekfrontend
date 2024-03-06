@@ -1,0 +1,28 @@
+<!-- user-modal.component.html -->
+<h2>Kullanıcı Ekle</h2>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Adı</mat-label>
+    <input matInput [(ngModel)]="user.name" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input matInput [(ngModel)]="user.email" name="email" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Şifre</mat-label>
+    <input matInput [(ngModel)]="user.password" name="password" required type="password">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Rol</mat-label>
+    <mat-select [(ngModel)]="user.role" name="role" required>
+      <mat-option value="user">User</mat-option>
+      <mat-option value="admin">Admin</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Kaydet</button>
+</form>

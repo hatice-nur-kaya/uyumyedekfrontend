@@ -19,8 +19,12 @@
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
-        <td>{{ user.role }}</td>
-      </tr>
-    </tbody>
+        <td>
+          <span [ngClass]="{'role-user': user.role === 'user', 'role-admin': user.role === 'admin'}">
+            {{ user.role }}
+          </span>
+        </td>
+        </tr>
+  </tbody>
   </table>
 </div>

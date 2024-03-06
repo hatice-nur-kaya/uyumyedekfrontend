@@ -1,0 +1,15 @@
+.role-user, .role-admin {
+    display: inline-block; /* veya 'flex' */
+    min-width: 75px; /* Etiketler için minimum genişlik */
+    height: 30px; /* Tüm etiketlerin yüksekliği */
+    background-color: #ffcccc; /* Varsayılan arka plan rengi */
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center; /* İçeriği ortala */
+    line-height: 25px; /* Yükseklik ile aynı değeri kullanarak metni dikey olarak ortalar */
+  }
+  
+  .role-admin {
+    background-color: #ccffcc; /* Sadece arka plan rengi farklı */
+  }
